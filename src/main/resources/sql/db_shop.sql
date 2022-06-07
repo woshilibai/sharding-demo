@@ -1,13 +1,13 @@
-create schema if not exists db_shop collate latin1_swedish_ci;
+create schema db_shop collate latin1_swedish_ci;
 
-create table if not exists t_dict
+create table t_dict
 (
 	dict_code varchar(20) charset latin1 null comment '字典编码',
 	dict_value varchar(50) null
 )
 comment '字典表' charset=utf8;
 
-create table if not exists t_shop
+create table t_shop
 (
 	shop_id int not null
 		primary key,
