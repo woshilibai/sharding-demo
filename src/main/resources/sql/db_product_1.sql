@@ -1,8 +1,10 @@
-create schema db_product_1 collate latin1_swedish_ci;
+create schema db_product_1 collate utf8_general_ci;
+
+use db_product_1;
 
 create table t_dict
 (
-	dict_code varchar(20) charset latin1 null comment '字典编码',
+	dict_code varchar(20) charset utf8 null comment '字典编码',
 	dict_value varchar(50) null
 )
 comment '字典表' charset=utf8;
@@ -13,7 +15,7 @@ create table t_product_base_0
 		primary key,
 	prod_name varchar(50) null,
 	shop_id int not null comment '店铺id',
-	prod_type varchar(20) charset latin1 null comment '商品分类'
+	prod_type varchar(20) charset utf8 null comment '商品分类'
 )
 comment '商品基础表' charset=utf8;
 
@@ -23,7 +25,7 @@ create table t_product_base_1
 		primary key,
 	prod_name varchar(50) null,
 	shop_id int not null comment '店铺id',
-	prod_type varchar(20) charset latin1 null comment '商品分类'
+	prod_type varchar(20) charset utf8 null comment '商品分类'
 )
 comment '商品基础表' charset=utf8;
 

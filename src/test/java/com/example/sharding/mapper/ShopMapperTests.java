@@ -21,9 +21,12 @@ public class ShopMapperTests {
     @Resource
     ShopMapper shopMapper;
 
+    /**
+     * 写走主库
+     */
     @Test
     public void testInsert(){
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 2; i++) {
             Shop shop = new Shop();
             shop.setShopId(Long.valueOf(i));
             shop.setShopName("西安文理的小店_" + i);
@@ -32,8 +35,11 @@ public class ShopMapperTests {
         }
     }
 
+    /**
+     * 读走从库
+     */
     @Test
     public void testQuery(){
-        log.info(shopMapper.selectById(2).toString());
+        log.info(shopMapper.selectById(1).toString());
     }
 }
