@@ -1,15 +1,15 @@
-create schema if not exists db_product_0 collate latin1_swedish_ci;
+create schema db_product_0 collate latin1_swedish_ci;
 
-create table if not exists t_dict
+create table t_dict
 (
 	dict_code varchar(20) charset latin1 null comment '字典编码',
 	dict_value varchar(50) null
 )
 comment '字典表' charset=utf8;
 
-create table if not exists t_product_base_0
+create table t_product_base_0
 (
-	prod_id varchar(30) charset latin1 not null
+	prod_id bigint not null
 		primary key,
 	prod_name varchar(50) null,
 	shop_id int not null comment '店铺id',
@@ -17,9 +17,9 @@ create table if not exists t_product_base_0
 )
 comment '商品基础表' charset=utf8;
 
-create table if not exists t_product_base_1
+create table t_product_base_1
 (
-	prod_id varchar(30) charset latin1 not null
+	prod_id bigint not null
 		primary key,
 	prod_name varchar(50) null,
 	shop_id int not null comment '店铺id',
@@ -27,21 +27,23 @@ create table if not exists t_product_base_1
 )
 comment '商品基础表' charset=utf8;
 
-create table if not exists t_product_detail_0
+create table t_product_detail_0
 (
-	prod_id varchar(30) charset latin1 not null
+	id bigint not null
 		primary key,
+	prod_id bigint not null,
 	prod_detail_info varchar(50) null,
 	shop_id int null
 )
 comment '商品详情表' charset=utf8;
 
-create table if not exists t_product_detail_1
+create table t_product_detail_1
 (
-	prod_id varchar(30) charset latin1 not null
-		primary key,
+	prod_id bigint not null,
 	prod_detail_info varchar(50) null,
-	shop_id int null
+	shop_id int null,
+	id bigint not null
+		primary key
 )
 comment '商品详情表' charset=utf8;
 
