@@ -32,7 +32,7 @@ public class ProductMapperTests {
     @Resource
     ProductDetailMapper productDetailMapper;
 
-//    @Transactional
+//    @Transactional    //  测试类执行完毕后事务会自动回滚，不方便测试
     @Test
     public void testInsert(){
         for (int i = 0; i < 10; i++) {
